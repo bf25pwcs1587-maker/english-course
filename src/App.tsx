@@ -5,6 +5,7 @@ import { KidsDashboard } from './components/Kids/KidsDashboard.tsx';
 import { AdvancedDashboard } from './components/Advanced/AdvancedDashboard.tsx';
 import { PlacementQuizModal } from './components/PlacementQuizModal.tsx';
 import { ParentDashboardModal } from './components/ParentDashboardModal.tsx';
+import { InstallAppModal } from './components/InstallAppModal.tsx';
 import { badgesData } from './data/badges.ts';
 import { checkBadgeUnlocks } from './utils/rules.ts';
 import { sfx } from './utils/soundEffects.ts';
@@ -45,9 +46,10 @@ export default function App() {
 
   const [isPlacementOpen, setIsPlacementOpen] = useState(false);
   const [isParentOpen, setIsParentOpen] = useState(false);
+  const [isInstallOpen, setIsInstallOpen] = useState(false);
   const [newlyUnlockedBadge, setNewlyUnlockedBadge] = useState<string | null>(null);
 
-  // Parse URL query parameter for ?path=kids, ?path=advanced or ?quiz=1
+  // Parse URL query parameter for ?path=kids, ?path=advanced or ?quiz=1 or ?install=1
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const pathParam = params.get('path');
@@ -56,6 +58,9 @@ export default function App() {
     }
     if (params.get('quiz') === '1') {
       setIsPlacementOpen(true);
+    }
+    if (params.get('install') === '1') {
+      setIsInstallOpen(true);
     }
   }, []);
 
@@ -101,6 +106,7 @@ export default function App() {
         onUpdateProgress={setProgress}
         onOpenPlacement={() => setIsPlacementOpen(true)}
         onOpenParent={() => setIsParentOpen(true)}
+        onOpenInstall={() => setIsInstallOpen(true)}
       />
 
       {/* Main Container */}
@@ -131,6 +137,13 @@ export default function App() {
         isOpen={isParentOpen}
         onClose={() => setIsParentOpen(false)}
         progress={progress}
+        uiLang={progress.uiLang}
+      />
+
+      {/* Install App / PWA Modal */}
+      <InstallAppModal
+        isOpen={isInstallOpen}
+        onClose={() => setIsInstallOpen(false)}
         uiLang={progress.uiLang}
       />
 
@@ -166,16 +179,23 @@ export default function App() {
           <span>Sabai English (สบาย อิงลิช) — แอปพลิเคชันฝึกภาษาอังกฤษสำหรับคนไทย</span>
           <div className="flex gap-4">
             <button
+              onClick={() => setIsInstallOpen(true)}
+              className="hover:underline cursor-pointer text-amber-600 font-bold flex items-center gap-1"
+            >
+              <span>📲</span>
+              <span>{progress.uiLang === 'th' ? 'วิธีดาวน์โหลดและติดตั้งแอป' : 'How to Download App'}</span>
+            </button>
+            <button
               onClick={() => setIsPlacementOpen(true)}
               className="hover:underline cursor-pointer"
             >
-              ทำแบบทดสอบวัดระดับ
+              {progress.uiLang === 'th' ? 'ทำแบบทดสอบวัดระดับ' : 'Placement Quiz'}
             </button>
             <button
               onClick={() => setIsParentOpen(true)}
               className="hover:underline cursor-pointer"
             >
-              มุมผู้ปกครองและคุณครู
+              {progress.uiLang === 'th' ? 'มุมผู้ปกครองและคุณครู' : 'Parent & Teacher View'}
             </button>
           </div>
         </div>

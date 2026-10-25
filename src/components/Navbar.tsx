@@ -15,6 +15,7 @@ import {
   Compass,
   GraduationCap,
   Smile,
+  Download,
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -22,6 +23,7 @@ interface NavbarProps {
   onUpdateProgress: (updater: (prev: UserProgress) => UserProgress) => void;
   onOpenPlacement: () => void;
   onOpenParent: () => void;
+  onOpenInstall: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -29,6 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onUpdateProgress,
   onOpenPlacement,
   onOpenParent,
+  onOpenInstall,
 }) => {
   const t = translations[progress.uiLang];
 
@@ -144,6 +147,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="px-2.5 py-1.5 text-xs font-bold rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 transition-colors cursor-pointer"
             >
               {progress.uiLang === 'th' ? '🇹🇭 TH' : '🇬🇧 EN'}
+            </button>
+
+            {/* Install / Download App Button */}
+            <button
+              onClick={onOpenInstall}
+              title={progress.uiLang === 'th' ? 'ดาวน์โหลดและติดตั้งแอป' : 'Download and Install App'}
+              aria-label="Download or Install App"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500 text-amber-950 text-xs font-black shadow-xs transition transform hover:scale-102 cursor-pointer"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">
+                {progress.uiLang === 'th' ? 'ดาวน์โหลดแอป' : 'Install App'}
+              </span>
             </button>
 
             {/* Placement Quiz Button */}

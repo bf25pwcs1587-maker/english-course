@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#78350f" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <g filter="url(#shadow)" transform="translate(256, 256) scale(1.1)">
+    <!-- Cute Mascot Elephant -->
+    <!-- Body -->
+    <ellipse cx="20" cy="20" rx="110" ry="85" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="6"/>
+    <!-- Head -->
+    <circle cx="-60" cy="-20" r="75" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="6"/>
+    <!-- Large Ear -->
+    <ellipse cx="-15" cy="-30" rx="45" ry="60" fill="#fcd34d" stroke="#f59e0b" stroke-width="5" transform="rotate(-10, -15, -30)"/>
+    <!-- Eye with shine -->
+    <circle cx="-85" cy="-30" r="12" fill="#0f172a" />
+    <circle cx="-88" cy="-34" r="4" fill="#ffffff" />
+    <!-- Cheerful Cheek -->
+    <ellipse cx="-95" cy="-5" rx="12" ry="8" fill="#fda4af" opacity="0.8" />
+    <!-- Trunk curling up happily -->
+    <path d="M -115 -10 Q -160 0 -150 45 Q -140 80 -110 70 Q -95 65 -105 45 Q -115 25 -95 10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Feet -->
+    <rect x="-35" y="70" width="36" height="55" rx="16" fill="#cbd5e1" />
+    <rect x="35" y="70" width="36" height="55" rx="16" fill="#cbd5e1" />
+    <!-- Golden Star above trunk -->
+    <path d="M -155 -40 L -148 -24 L -130 -22 L -143 -9 L -139 9 L -155 0 L -171 9 L -167 -9 L -180 -22 L -162 -24 Z" fill="#fef08a" stroke="#ca8a04" stroke-width="3"/>
+  </g>
+</svg>
