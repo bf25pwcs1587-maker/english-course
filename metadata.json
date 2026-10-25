@@ -1,0 +1,6 @@
+{
+  "name": "Sabai English (สบาย อิงลิช) - Kids & Advanced English for Thai Learners",
+  "description": "Comprehensive Thai-English learning app featuring dedicated Kids and Advanced paths, adjustable speed audio, reading with Thai glosses, interactive games, AI writing feedback, and parent/teacher dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,58 @@
+import { Badge } from '../types/index.ts';
+
+export const badgesData: Badge[] = [
+  {
+    id: 'first_step',
+    titleTh: 'ก้าวแรกแสนสดใส',
+    titleEn: 'First Bright Step',
+    descriptionTh: 'เริ่มเรียนรู้และผ่านบทเรียนแรกสำเร็จ',
+    descriptionEn: 'Completed your first interactive lesson',
+    icon: '🌱',
+    condition: 'lessons',
+  },
+  {
+    id: 'streak_3',
+    titleTh: 'ไฟเรียนรู้ 3 วัน',
+    titleEn: '3-Day Momentum',
+    descriptionTh: 'เข้าเรียนอย่างสม่ำเสมอติดต่อกัน 3 วัน',
+    descriptionEn: 'Maintained a 3-day learning streak',
+    icon: '🔥',
+    condition: 'streak',
+  },
+  {
+    id: 'word_collector',
+    titleTh: 'นักสะสม 10 คำศัพท์',
+    titleEn: 'Word Collector',
+    descriptionTh: 'เรียนรู้และฟังคำศัพท์ครบ 10 คำ',
+    descriptionEn: 'Mastered 10 new English words',
+    icon: '📚',
+    condition: 'score',
+  },
+  {
+    id: 'writing_star',
+    titleTh: 'นักเขียนดาวเด่น',
+    titleEn: 'Creative Writer',
+    descriptionTh: 'ส่งงานเขียนภาษาอังกฤษและได้รับข้อเสนอแนะเชิงบวก',
+    descriptionEn: 'Submitted an English writing piece for feedback',
+    icon: '✍️',
+    condition: 'writing',
+  },
+  {
+    id: 'star_hunter',
+    titleTh: 'ดาวทอง 30 ดวง',
+    titleEn: 'Star Champion',
+    descriptionTh: 'สะสมดาวครบ 30 ดวงจากเกมและกิจกรรม',
+    descriptionEn: 'Earned 30 stars from activities and games',
+    icon: '⭐',
+    condition: 'score',
+  },
+  {
+    id: 'speed_master',
+    titleTh: 'หูทองคำปรับสปีด',
+    titleEn: 'Listening Master',
+    descriptionTh: 'ลองใช้ฟังก์ชันปรับความเร็วเสียง (0.5x, 0.75x หรือ 1.25x)',
+    descriptionEn: 'Explored adjustable audio speed for clear listening',
+    icon: '🎧',
+    condition: 'speed',
+  },
+];
